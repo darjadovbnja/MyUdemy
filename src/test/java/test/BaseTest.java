@@ -23,9 +23,10 @@ public abstract class BaseTest {
         return driver;
     }
     @BeforeClass
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         driver = DriverFactory.getDriver(Browser.CHROME);
         driver.get("https://www.google.com");
+        wait(2000);
        // wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id='hplogo']")));
         steps = new SearchSteps();
 
